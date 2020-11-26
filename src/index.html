@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image finder</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+</head>
+<body>
+
+    <form class="search-form " id="search-form">
+
+            <div class="form-row my-5 display-flex justify-content-center alighn-items-centers">
+
+            <input
+            class="form-control-lg col-sm-5"
+              type="text"
+              name="query"
+              autocomplete="off"
+              placeholder="Start your search here..."
+            />
+
+            <div class="col-auto">
+                <button type="submit" class="btn btn-lg btn-outline-primary" id="search-btn">
+                    <i class="material-icons search">search</i> <span class="spinner-border spinner-border-sm spinner hidden" role="status" aria-hidden="true"></span>
+                  </button>
+            </div>
+
+            </div>
+
+      </form>
+
+     <div class="list-container">
+          <ul class="gallery js-gallery">
+            <!-- Список <li> с карточками изображений -->
+          </ul>
+     </div>
+
+     <div class="load-more-btn"></div>
+
+          <!--
+      Модальное окно для полноразмерного изображения
+      Для того чтобы открыть, необходимо добавить на div.lightbox CSS-класс is-open
+    -->
+    <!-- <div class="lightbox js-lightbox">
+        <div class="lightbox__overlay"></div>
+
+        <div class="lightbox__content">
+          <img class="lightbox__image" src="" alt="" />
+        </div>
+
+        <button
+          type="button"
+          class="lightbox__button"
+          data-action="close-lightbox"
+        ></button>
+      </div> -->
+
+      <!-- <button class="btn btn-lg btn-outline-primary load-more-btn hidden" type="button">
+        <span class="spinner-border spinner-border-sm spinner" role="status" aria-hidden="true"></span>
+        <span class="btn-label"></span>
+        <i class="material-icons icon-load hidden" aria-hidden="true"> get_app</i>
+      </button> -->
+
+</body>
+</html>
