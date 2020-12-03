@@ -13,7 +13,16 @@ export default class BaseApiService {
     }
 
     async getQuery() {
-        const url = `${BASE_URL}?image_type=photo&orientation=horizontal&q=${this.searchQuery}&page=${this.page}&per_page=${this.perpage}&key=${API_KEY}`
+        const searchParams = new URLSearchParams({
+            key: API_KEY,
+            q: this.searchQuery,
+            image_type: "photo",
+            orientation: "horizontal",
+            page: this.page,
+            per_page: this.perpage,
+
+        })
+        const url = `${BASE_URL}?${searchParams}`;
 
         return fetch(url).then(res => res.json()).then(data => {
             this.incrementPage();

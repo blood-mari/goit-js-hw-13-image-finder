@@ -45,10 +45,10 @@ function fetchImages() {
             imageApiService.pushError('No matches found');
         }
 
-        if (hits.length > 0) {
-            changeIconsOnSearch();
-            galleryMarkUp(hits);
-        }
+            if (hits.length > 0) {
+                changeIconsOnSearch();
+                galleryMarkUp(hits);
+            }
     });
 }
 
@@ -58,15 +58,16 @@ const scrollTo = entries => {
 
         if (entry.isIntersecting && imageApiService.inputQuery !== '') {
             imageApiService.getQuery().then(images => {
-                galleryMarkUp(images);
-                imageApiService.incrementPage();
+                    galleryMarkUp(images);
+                    imageApiService.incrementPage();
+
             });
         }
     });
 }
 
 const options = {
-    rootMargin: '200px',
+    rootMargin: '250px',
 }
 
 const observer = new IntersectionObserver(scrollTo, options);
