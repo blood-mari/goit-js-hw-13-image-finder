@@ -9,7 +9,7 @@ refs.searchForm.addEventListener('submit', onSearch);
 
 function onSearch(event) {
     event.preventDefault();
-    clearGallery();
+
     imageApiService.inputQuery = event.target.elements.query.value.trim();
 
     if (imageApiService.inputQuery === '') {
@@ -20,12 +20,13 @@ function onSearch(event) {
     }
 
     imageApiService.resetPage();
+    clearGallery();
 
     fetchImages();
 }
 
 function galleryMarkUp(hits) {
-    refs.galleryCont.insertAdjacentHTML('beforeend', cardItemTpl(hits));
+    refs.galleryCont.insertAdjacentHTML('beforeend', cardItemTpl(hits), {once:true,});
 }
 
 function clearGallery() {
